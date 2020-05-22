@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="493.0" prefWidth="926.0" style="-fx-background-color: #6AABCB;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MenuController">
+   <children>
+      <Pane fx:id="mousePane" layoutY="-1.0" onMouseMoved="#showCurrentInfo" prefHeight="502.0" prefWidth="926.0">
+         <children>
+            <ImageView fitHeight="135.0" fitWidth="181.0" layoutX="4.0" layoutY="408.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/menu.png" />
+               </image>
+            </ImageView>
+            <Text fill="#faa511" layoutX="116.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fox" wrappingWidth="51.8671875">
+               <font>
+                  <Font name="System Bold Italic" size="25.0" />
+               </font>
+            </Text>
+            <Label fx:id="currentUserLabel" layoutX="294.0" layoutY="16.0" prefHeight="35.0" prefWidth="292.0" text="Current user:" textFill="#faa511">
+               <font>
+                  <Font name="System Bold Italic" size="24.0" />
+               </font></Label>
+            <Button fx:id="deleteDbButton" layoutX="22.0" layoutY="146.0" mnemonicParsing="false" onAction="#deleteDB" prefHeight="25.0" prefWidth="99.0" style="-fx-background-color: #F7957B;" text="Delete DB">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Button>
+            <Button fx:id="createDbButton" layoutX="22.0" layoutY="113.0" mnemonicParsing="false" onAction="#createDB" style="-fx-background-color: #F7957B;" text="Create new DB">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Button>
+            <TextField fx:id="createDbNameField" layoutX="136.0" layoutY="113.0" prefHeight="25.0" prefWidth="149.0" promptText="New DB name" />
+            <TextField fx:id="deleteDbName" layoutX="136.0" layoutY="146.0" promptText="DB name for delete" />
+            <Label fx:id="statusLabel" layoutX="300.0" layoutY="450.0" prefHeight="49.0" prefWidth="617.0" />
+            <Button fx:id="logOut" layoutX="855.0" layoutY="21.0" mnemonicParsing="false" onAction="#logOut" style="-fx-background-color: #F7957B;" text="Log out">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Button>
+            <Button fx:id="createNewUserButton" layoutX="5.0" layoutY="70.0" mnemonicParsing="false" onAction="#createNewUser" prefHeight="25.0" prefWidth="142.0" style="-fx-background-color: #F7957B;" text="Create new user">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Label fx:id="currentDBLabel" layoutX="582.0" layoutY="16.0" prefHeight="35.0" prefWidth="273.0" text="Current DB:" textFill="#faa511">
+               <font>
+                  <Font name="System Bold Italic" size="24.0" />
+               </font>
+            </Label>
+            <Button fx:id="clearTableButton" layoutX="152.0" layoutY="70.0" mnemonicParsing="false" onAction="#clearTable" prefHeight="25.0" prefWidth="142.0" style="-fx-background-color: #F7957B;" text="Clear table">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <TableView fx:id="foxTable" layoutX="298.0" layoutY="63.0" prefHeight="383.0" prefWidth="617.0">
+              <columns>
+                <TableColumn fx:id="foxIdColumn" prefWidth="43.0" text="Fox ID" />
+                <TableColumn fx:id="foxNameColumn" prefWidth="136.0" text="Fox name" />
+                  <TableColumn fx:id="ownerFioColumn" prefWidth="223.0" text="Owner fio" />
+                  <TableColumn fx:id="birthdayColumn" prefWidth="94.0" text="Birthday" />
+                  <TableColumn fx:id="colorColumn" prefWidth="119.0" text="Color" />
+              </columns>
+            </TableView>
+            <TextField fx:id="foxIdField" layoutX="12.0" layoutY="201.0" prefHeight="25.0" prefWidth="273.0" promptText="Fox id" text="1" />
+            <TextField fx:id="foxNameField" layoutX="12.0" layoutY="233.0" prefHeight="25.0" prefWidth="273.0" promptText="Fox name" text="Luxor" />
+            <TextField fx:id="ownerFioField" layoutX="12.0" layoutY="265.0" prefHeight="25.0" prefWidth="273.0" promptText="Owner fio" text="Танин Иван Васильевич" />
+            <TextField fx:id="birthdayField" layoutX="12.0" layoutY="296.0" prefHeight="25.0" prefWidth="273.0" promptText="Birthday (yyyy-mm-dd)" text="2019-05-14" />
+            <TextField fx:id="colorField" layoutX="12.0" layoutY="327.0" prefHeight="25.0" prefWidth="273.0" promptText="Color" text="Рыжий с белым" />
+            <Button fx:id="findFoxNameButton" layoutX="5.0" layoutY="397.0" mnemonicParsing="false" onAction="#findFoxByName" prefHeight="25.0" prefWidth="142.0" style="-fx-background-color: #F7957B;" text="Find fox by name">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button fx:id="addNewFoxButton" layoutX="4.0" layoutY="362.0" mnemonicParsing="false" onAction="#addNewFox" prefHeight="25.0" prefWidth="142.0" style="-fx-background-color: #F7957B;" text="Add new fox">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button fx:id="updateFoxInfoButton" layoutX="152.0" layoutY="362.0" mnemonicParsing="false" onAction="#updateFoxInfo" prefHeight="25.0" prefWidth="142.0" style="-fx-background-color: #F7957B;" text="Update info about fox">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button fx:id="deleteFoxButton" layoutX="152.0" layoutY="397.0" mnemonicParsing="false" onAction="#deleteFoxByName" prefHeight="25.0" prefWidth="142.0" style="-fx-background-color: #F7957B;" text="Delete fox by name">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Text fill="#faa511" layoutX="58.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Postgres Manager" wrappingWidth="181.000009059906">
+               <font>
+                  <Font name="System Bold Italic" size="20.0" />
+               </font>
+            </Text>
+            <Button fx:id="refreshButton" layoutX="192.0" layoutY="453.0" mnemonicParsing="false" onAction="#initialize" style="-fx-background-color: #F7957B;" text=" Refresh table">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
